@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Question</title>
+</head>
+<body>
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+    {% endif %}
+
+    <form method="POST">
+        <p>{{ question }}</p>
+        <input type="text" name="answer" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
