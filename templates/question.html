@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Quiz Question</title>
-</head>
-<body>
-    {% if message %}
-        <p><strong>{{ message }}</strong></p>
-    {% endif %}
+    <head>
+        <title>Quiz Question</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <h2>Quiz Question</h2>
+                {% if message %}
+                    <p><strong>{{ message }}</strong></p>
+                {% endif %}
 
-    <form method="POST">
-        <p>{{ question }}</p>
-        <input type="text" name="answer" required>
-        <button type="submit">Submit</button>
-    </form>
-</body>
+                <form method="POST">
+                    <p>{{ question }}</p>
+                    <input type="text" name="answer" placeholder="Enter Answer" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
 </html>
