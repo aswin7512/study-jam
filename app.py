@@ -31,7 +31,8 @@ def quiz():
         if index >= 5:
             final_score = session['score']
             session.clear()
-            return f"<h2>Quiz Finished !</h2><br><p>Your Score: {final_score}/{len(questions)}</p>"
+            message = f"Your Score: {final_score}/{len(questions)}"
+            return render_template("result.html", message=message)
         
         return render_template("question.html", question=questions[index]['question'], message=message)
     return render_template("question.html", question = questions[index]['question'])
